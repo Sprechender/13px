@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>height: 13px; (blog)</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/scrollbar.css">
+  <link rel="icon" type="image/png" href="img/fav/fav_logo.png" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.25s ease-in;
+    }
+
+    .loaded {
+      opacity: 1;
+    }
+
+    /* Apply loaded class to page list itself to prevent flicker */
+    #pageList.loaded {
+      opacity: 1;
+    }
+
+    ol {
+      list-style-type: decimal; /* Ensure the list is numbered */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong><h1><span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></h1></strong>
+    <nav>
+      <a href="pageList.html">all pages</a>
+    </nav>
+  </header>
+
+  <main id="pageList">
+    <ol> </ol>
+  </main>
+
+  <main id="content">
+    </main>
+
+  <footer>
+    <p>© 2024 <span style="color: #d19a66">13</span><span style="color: #ef596f">px</span> | <a href="https://github.com/Sprechender/13px">Check it out on GitHub <ion-icon name="logo-github"></ion-icon></a></p>
+  </footer>
+
+</body>
+</html>

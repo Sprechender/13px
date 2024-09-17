@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page List - 13px</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="css/scrollbar.css">
+  <link rel="icon" type="image/png" href="img/fav/fav_logo.png" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.25s ease-in;
+    }
+
+    .loaded {
+      opacity: 1;
+    }
+  </style>
+  <link rel="stylesheet" href="css/scrollbar.css">
+</head>
+<body>
+  <header>
+    <strong><h1><span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></h1></strong>
+  </header>
+
+  <main id="pageList">
+    <ol> </ol>
+  </main>
+
+  <footer>
+    <p>© 2024 <span style="color: #d19a66">13</span><span style="color: #ef596f">px</span> | <a href="index.html">Back to Blog <ion-icon name="arrow-back"></ion-icon></a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const pageListElement = document.getElementById('pageList');
+    const jsonFile = 'pages.json';
+
+    // Fetch pages from JSON file
+    fetch(jsonFile)
+      .then(response => response.json())
+      .then(pages => {
+        // Create links for each page in the JSON
+        pages.forEach((page, index) => {
+          const link = document.createElement('a');
+          link.href = `index.html#${page.filename.split('.')[0]}`; // Set href to the hash corresponding to the page
+          link.textContent = page.title;
+
+          // Apply fade-in class to each link
+          link.classList.add('fade-in');
+
+          // Create a list item (li) element and append the link to it
+          const listItem = document.createElement('li');
+          listItem.appendChild(link);
+
+          // Append the list item to the ordered list
+          pageListElement.querySelector('ol').appendChild(listItem);
+        });
+
+        // Apply fade-in class to the page list itself
+        pageListElement.classList.add('fade-in');
+
+        // Apply the loaded class after a delay to ensure proper animation
+        setTimeout(() => {
+          pageListElement.classList.add('loaded');
+          pageListElement.querySelectorAll('.fade-in').forEach(el => el.classList.add('loaded'));
+        }, 10);
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+  });
+  </script>
+</body>
+</html>
