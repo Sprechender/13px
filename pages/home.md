@@ -5,7 +5,7 @@ This is a **blog** crafted from numerous [Markdown](#whatismarkdown) files, sewn
 
 Curious? Peek under the hood at the source code. It's where the stuff happens!
 
-![Logo in which there is CSS code which sets an element's height to 13px](../img/logo/logobig_transparent.png)
+![Logo in which there is CSS code which sets an element's height to 13px](../13px/img/logo/logobig_transparent.png)
 I'm not sure if using "Consolas" as the logo font is okay, so please, no lawsuits! 🤞
 
 I will write about something that interests me once in a while.
