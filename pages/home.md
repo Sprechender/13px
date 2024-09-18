@@ -1,9 +1,9 @@
 # Welcome
 
 This is a **blog** crafted from numerous [Markdown](#whatismarkdown) files, sewn together by my fingers and enhanced with a dash of
-<strong>AI</strong>.
+**AI**.
 
-Curious? Peek under the hood at the source code. It's where the stuff happens!
+Curious? Peek under the hood at the [source code](https://github.com/Sprechender/13px). It's where the stuff happens!
 
 ![Logo in which there is CSS code which sets an element's height to 13px](../13px/img/logo/logobig_transparent.png)
 I'm not sure if using "Consolas" as the logo font is okay, so please, no lawsuits! 🤞
