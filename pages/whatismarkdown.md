@@ -17,6 +17,14 @@ In essence, Markdown is plain text formatting for everyone. Here's a simple comp
 - **HTML**: `<em>italic</em>` → Italic
 - **Markdown**: `**bold**` → Bold
 
+## How 13px uses Markdown files
+All articles on 13px are stored as .md files in a folder called "pages".
+
+This system could get slow with lots of articles (think hundreds!). I'm exploring solutions, but nothing is set
+yet.
+
+To learn more about how 13px works, check out this article: [didnt write article yet lol](404.html)
+
 ## Why use Markdown?
 
 There are numerous benefits to using Markdown:
