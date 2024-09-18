@@ -9,6 +9,7 @@ Curious? Peek under the hood at the source code. It's where the stuff happens!
 I'm not sure if using "Consolas" as the logo font is okay, so please, no lawsuits! 🤞
 
 I will write about something that interests me once in a while.
-Be patient it can take a while to write a page. English is not my native language lol
+My writing style is a work in progress – it may be messy and take some time to develop. I don't speak English
+fluently (yet!), but I'm learning. 😄
 
 Keep an eye out for more updates – i'll be cooking! ✨
