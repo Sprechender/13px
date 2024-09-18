@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }, 10);
         });
 
-        // Load the page based on the current hash, or default to the first page
+        // Load the page based on the current hash, or default to the home page
         loadPageFromHash();
       })
       .catch(error => console.error('Error fetching JSON:', error));
@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (page) {
         loadMarkdownPage(page.filename);
-      } else if (pages.length > 0) {
-        // If no hash or invalid hash, load the first page
-        loadMarkdownPage(pages[0].filename);
-        window.location.hash = `#${pages[0].filename.split('.')[0]}`; // Set default hash to first page
+      } else {
+        // If no hash or invalid hash, load the homepage (home.md)
+        loadMarkdownPage('home.md');
+        window.location.hash = '#home'; // Set default hash to home
       }
     }
 
