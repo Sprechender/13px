@@ -29,24 +29,86 @@
     ol {
       list-style-type: decimal; /* Ensure the list is numbered */
     }
+
+    /* Language dropdown styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 4px;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #555;
+    }
+
+    .dropbtn {
+      background-color: #333;
+      color: white;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
   </style>
 </head>
+<header>
+  <a href="/13px/">
+    <strong><h1><span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></h1></strong>
+  </a>
+  <nav>
+    <a href="pageList.html">all pages</a>
+    <div class="dropdown">
+      <button class="dropbtn">Language</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="changeLanguage('en-US')">English</a>
+        <a href="#" onclick="changeLanguage('de-DE')">German</a>
+      </div>
+    </div>
+  </nav>
+</header>
 <body>
-  <header>
-    <a href="/13px/">
-      <strong><h1><span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></h1></strong>
-    </a>
-    <nav>
-      <a href="pageList.html">all pages</a>
-    </nav>
-  </header>
+
+  <script>
+    function changeLanguage(language) {
+    const currentLanguage = language; // Set the default language here
+    window.location.reload()
+  }
+  </script>
+  
 
   <main id="pageList">
     <ol> </ol>
   </main>
 
   <main id="content">
-    </main>
+  </main>
 
   <footer>
     <p>© 2024 <span style="color: #d19a66">13</span><span style="color: #ef596f">px</span> | <a href="https://github.com/Sprechender/13px">Check it out on GitHub <ion-icon name="logo-github"></ion-icon></a></p>

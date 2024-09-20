@@ -4,7 +4,8 @@
     "filename": "whatismarkdown.md",
     "translation": {
       "de-DE": {
-        "title": "Wilkommen!"
+        "title": "Wilkommen!",
+        "filename": "whatismarkdown.de-DE.md"
       }
     }
   },
