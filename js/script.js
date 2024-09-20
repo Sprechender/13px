@@ -40,19 +40,33 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(error => console.error('Error fetching JSON:', error));
 
-    // Load page based on hash
-    function loadPageFromHash() {
-      const hash = window.location.hash.slice(1); // Remove the '#' from the hash
-      const page = pages.find(p => p.filename.split('.')[0] === hash);
-
-      if (page) {
-        loadMarkdownPage(page.filename);
-      } else {
-        // If no hash or invalid hash, load the homepage (home.md)
-        loadMarkdownPage('home.md');
-        window.location.hash = '#home'; // Set default hash to home
+      function loadPageFromHash() {
+        const hash = window.location.hash.slice(1); // Remove the '#' from the hash
+        const page = pages.find(p => p.filename.split('.')[0] === hash);
+        const currentLanguage = 'de-DE'; // Set the default language here
+      
+        if (page && page.translation) {
+          if (currentLanguage in page.translation) {
+            let translatedFilename = `${page.filename.split('.')[0]}`;
+            // Use the translation filename without the language code
+            if (translatedFilename.endsWith('.' + currentLanguage)) {
+              // If the title already has the language code, remove it
+              translatedFilename = translatedFilename.replace(`.${currentLanguage}`, '');
+            }
+            translatedFilename += `.${currentLanguage}.md`;
+      
+            page.filename = translatedFilename;
+          } else {
+            console.warn(`No translation available for language "${currentLanguage}" for this page`);
+          }
+        }
+      
+        try {
+          loadMarkdownPage(page.filename);
+        } catch {
+          // CHANGECHANGECHANGE
+        }
       }
-    }
 
     // Fetch and render the markdown page
     function loadMarkdownPage(filename) {
