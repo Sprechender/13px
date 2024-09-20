@@ -1,21 +1,11 @@
 [
-  {
-    "title": "What in the flying fu** is Markdown (md)?",
-    "filename": "whatismarkdown.md",
-    "translation": {
-      "de-DE": {
-        "title": "Wilkommen!"
-      }
+    {
+      "title": "What in the flying fu** is Markdown (md)?",
+      "filename": "whatismarkdown.md"
+    },
+    {
+        "title": "Welcome! (Home)",
+        "filename": "home.md"
     }
-  },
-  {
-    "title": "Welcome! (Home)",
-    "filename": "home.md",
-    "translation": {
-      "de-DE": {
-        "title": "Wilkommen!",
-        "filename": "home.de-DE.md"
-      }
-    }
-  }
-]
+  ]
+  
