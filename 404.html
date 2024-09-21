@@ -19,6 +19,44 @@
     .loaded {
       opacity: 1;
     }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .dropdown-button {
+      background-color: #2e2e2e;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .dropdown-content {
+      color: white;
+      display: none;
+      position: absolute;
+      background-color: #2e2e2e;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a {
+      text-decoration: none;
+      padding: 12px 16px;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
   </style>
   <link rel="stylesheet" href="css/scrollbar.css">
 </head>
@@ -27,6 +65,9 @@
     <a href="/13px/">
       <strong><h1><span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></h1></strong>
     </a>
+    <nav>
+      <button class="dropdown-button" onclick="window.location.href = 'index.html'">Back to Blog <ion-icon name="arrow-back"></ion-icon></button>
+    </nav>
   </header>
 
   <main id="content">

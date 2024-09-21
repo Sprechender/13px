@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="css/scrollbar.css">
   <link rel="icon" type="image/png" href="img/fav/fav_logo.png" />
+  
   <style>
     .fade-in {
       opacity: 0;
@@ -19,6 +20,52 @@
     .loaded {
       opacity: 1;
     }
+
+    #pageList.loaded {
+      opacity: 1;
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .dropdown-button {
+      background-color: #2e2e2e;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .dropdown-content {
+      color: white;
+      display: none;
+      position: absolute;
+      background-color: #2e2e2e;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a {
+      text-decoration: none;
+      padding: 12px 16px;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
   </style>
   <link rel="stylesheet" href="css/scrollbar.css">
 </head>
@@ -27,30 +74,40 @@
     <a href="/13px/">
       <strong><h1><span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></h1></strong>
     </a>
+    <nav>
+      <button class="dropdown-button" onclick="window.location.href = 'index.html'">Back to Blog <ion-icon name="arrow-back"></ion-icon></button>
+    </nav>
   </header>
 
   <main id="pageList">
-    <ol> </ol>
+    <ol></ol>
   </main>
 
   <footer>
-    <p>© 2024 <span style="color: #d19a66">13</span><span style="color: #ef596f">px</span> | <a href="index.html">Back to Blog <ion-icon name="arrow-back"></ion-icon></a></p>
+    <p>© 2024 <span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></p>
   </footer>
 
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     const pageListElement = document.getElementById('pageList');
     const jsonFile = 'pages.json';
+    const currentLanguage = getCookie('language') || 'en-US'; // Get language from cookie or default to 'en-US'
+
+    function getTitle(page) {
+      return page.translations && page.translations[currentLanguage]
+        ? page.translations[currentLanguage]
+        : page.title;
+    }
 
     // Fetch pages from JSON file
     fetch(jsonFile)
       .then(response => response.json())
       .then(pages => {
         // Create links for each page in the JSON
-        pages.forEach((page, index) => {
+        pages.forEach((page) => {
           const link = document.createElement('a');
           link.href = `index.html#${page.filename.split('.')[0]}`; // Set href to the hash corresponding to the page
-          link.textContent = page.title;
+          link.textContent = getTitle(page); // Get the title based on current language
 
           // Apply fade-in class to each link
           link.classList.add('fade-in');
@@ -73,6 +130,19 @@
         }, 10);
       })
       .catch(error => console.error('Error fetching JSON:', error));
+    
+    // Helper function for getting cookies
+    function getCookie(name) {
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const cookieArray = decodedCookie.split(';');
+      for (let i = 0; i < cookieArray.length; i++) {
+        const cookie = cookieArray[i].trim();
+        if (cookie.indexOf(name + "=") === 0) {
+          return cookie.substring((name.length + 1), cookie.length);
+        }
+      }
+      return null;
+    }
   });
   </script>
 </body>

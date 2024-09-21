@@ -1,7 +1,10 @@
 [
     {
       "title": "What in the flying fu** is Markdown (md)?",
-      "filename": "whatismarkdown.md"
+      "filename": "whatismarkdown.md",
+      "translations":{
+        "de-DE": "Was zum fi** ist Markdown (md)?"
+      }
     },
     {
         "title": "Welcome! (Home)",
