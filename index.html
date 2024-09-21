@@ -29,6 +29,47 @@
     ol {
       list-style-type: decimal; /* Ensure the list is numbered */
     }
+
+    /* Dropdown styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .dropdown-button {
+      background-color: #2e2e2e; /* Dark background for button */
+      color: #fff; /* White text color */
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .dropdown-content {
+      color: white;
+      display: none;
+      position: absolute;
+      background-color: #2e2e2e; /* Dark background for menu */
+      min-width: 100px; /* Set minimum width for menu */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow effect */
+      z-index: 1;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a {
+      text-decoration: none;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+      text-decoration: none;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -37,8 +78,13 @@
       <strong><h1><span style="color: #d19a66">13</span><span style="color: #ef596f">px</span></h1></strong>
     </a>
     
-    <button id="lang-de">De</button>
-    <button id="lang-en">En</button>
+    <div class="dropdown">
+      <button class="dropdown-button">Language</button>
+      <div class="dropdown-content" style="cursor:pointer;">
+        <a id="lang-en">English</a>
+        <a id="lang-de">Deutsch</a>
+      </div>
+    </div>
     <nav>
       <a href="pageList.html">all pages</a>
     </nav>
@@ -49,7 +95,7 @@
   </main>
 
   <main id="content">
-    </main>
+  </main>
 
   <footer>
     <p>© 2024 <span style="color: #d19a66">13</span><span style="color: #ef596f">px</span> | <a href="https://github.com/Sprechender/13px">Check it out on GitHub <ion-icon name="logo-github"></ion-icon></a></p>
