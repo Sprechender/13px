@@ -5,7 +5,10 @@
     },
     {
         "title": "Welcome! (Home)",
-        "filename": "home.md"
+        "filename": "home.md",
+        "translations": {
+          "de-DE": "Wilkommen! (Home)"
+        }
     }
   ]
   
